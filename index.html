@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./CSS/normalize.css" />
     <link rel="stylesheet" href="./CSS/stylesheet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
     <title>Library</title>
   </head>
   <body>
@@ -14,14 +25,24 @@
         <div class="banner-imgage"></div>
         <div>
           <h1>Black Library</h1>
-          <div class="edit-button-container">
-            <button class="add-book">add book</button>
-            <button class="remove">remove</button>
-          </div>
+          <button class="add-book">add book</button>
         </div>
       </div>
       <div class="books">
-
+        <div>
+          <div class="book-name">Discrete Mathematics with Applications</div>
+          <div class="author">by Susanna S. Epp</div>
+          <div class="progress">
+            <form action="post">
+              <progress value="118" max="245"></progress>
+              <div>112/245</div>
+            </form>
+          </div>
+          <div class="button">
+            <button>Update</button>
+            <button>remove</button>
+          </div>
+        </div>
       </div>
     </main>
     <script src="./script.js"></script>

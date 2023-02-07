@@ -1,5 +1,5 @@
 * {
-  border: 1px solid red;
+  
 }
 :root {
   font-size: 16px;
@@ -21,6 +21,7 @@ main {
   flex-direction: column;
 }
 
+
 /* top section*/
 
 .header {
@@ -41,9 +42,8 @@ main {
 h1 {
   font-size: 1rem;
 }
-.edit-button-container {
-  display: flex;
-  flex-direction: column;
+.add-book {
+  height: 30px;
 }
 
 /* book grids */
@@ -51,4 +51,33 @@ h1 {
 .books {
   flex-grow: 1;
   margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  align-content: start;
+  gap: 20px;
+}
+.books > div {
+  height: 160px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.book-name{
+  font-family: 'Merriweather', serif;
+  font-weight: 900;
+}
+.author {
+  font-family: 'Merriweather', serif;
+  font-weight: 300;
+}
+form{
+  display: flex;
+}
+form > div {
+  margin-left: 20px;
+}
+button {
+  font-family: 'Lato', sans-serif;
 }
