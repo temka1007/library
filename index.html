@@ -39,10 +39,32 @@
             </form>
           </div>
           <div class="button">
-            <button>Update</button>
-            <button>remove</button>
+            <button class="update">Update</button>
+            <button class="remove">remove</button>
           </div>
         </div>
+      </div>
+      <div class="popup">
+        <form action="post book">
+          <div class="book-name-container">
+            <label for="book_name">Book Name:</label>
+            <input type="text" name="book-name" id="book_name" />
+          </div>
+          <div class="author-name-container">
+            <label for="author">Author:</label>
+            <input type="text" name="author" id="author" />
+          </div>
+          <div class="page-input-container">
+            <label for="page">Page:</label>
+            <input type="number" name="" id="read_page" min="0" />
+            <div>to</div>
+            <input type="number" name="" id="page_number" min="o" />
+          </div>
+          <div class="form_button">
+            <button class="create">create</button>
+            <button class="cancel">cancel</button>
+          </div>
+        </form>
       </div>
     </main>
     <script src="./script.js"></script>
