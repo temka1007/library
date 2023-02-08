@@ -25,7 +25,9 @@
         <div class="banner-imgage"></div>
         <div>
           <h1>Black Library</h1>
-          <button class="add-book">add book</button>
+          <button data-add-book-button=".popup" class="add-book">
+            add book
+          </button>
         </div>
       </div>
       <div class="books">
@@ -57,15 +59,16 @@
           <div class="page-input-container">
             <label for="page">Page:</label>
             <input type="number" name="" id="read_page" min="0" />
-            <div>to</div>
-            <input type="number" name="" id="page_number" min="o" />
+            <div>out of</div>
+            <input type="number" name="" id="page_number" min="0" />
           </div>
           <div class="form_button">
             <button class="create">create</button>
-            <button class="cancel">cancel</button>
+            <button data-cancel-button class="cancel">cancel</button>
           </div>
         </form>
       </div>
+      <div id="overlay"></div>
     </main>
     <script src="./script.js"></script>
   </body>

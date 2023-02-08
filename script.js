@@ -1,48 +1,72 @@
-const addBookBtn = document.querySelector(".add-book");
+/* eslint-disable no-restricted-globals */
+const addBookBtn = document.querySelector("[data-add-book-button]");
 const updateBtn = document.querySelector(".update");
-const removeBtn = document.querySelector(".remove");
+const books = document.querySelector(".books");
 
-let myLibrary = [];
+const create = document.querySelector(".create");
+const cancelBtn = document.querySelector("[data-cancel-button]");
+const overlay = document.querySelector("#overlay");
+
+const bookName = document.querySelector("#book_name");
+const authorName = document.querySelector("#author");
+const readPage = document.querySelector("#read_page");
+const page = document.querySelector("#page_number");
+
+let mylibrary = [];
+
+function openPopup(popup) {
+  if (popup == null) return;
+  popup.classList.add("active");
+  overlay.classList.add("active");
+}
+
+function closePopup(popup) {
+  if (popup == null) return;
+  popup.classList.remove("active");
+  overlay.classList.remove("active");
+}
 
 addBookBtn.addEventListener("click", () => {
-    
-})
+  const popup = document.querySelector(".popup");
+  openPopup(popup);
+  event.preventDefault();
+});
 
-const createBtn = document.querySelector(".create")
-const inputAuthorName = document.querySelector("#author")
-const container = document.querySelector(".books div")
+cancelBtn.addEventListener("click", () => {
+  const popup = cancelBtn.closest(".popup");
+  closePopup(popup);
+  event.preventDefault();
+});
 
-createBtn.addEventListener("click", () => {
-    const value = inputAuthorName.value;
-    const nameField = document.querySelector(".author")
-    nameField.remove();
-    const author = document.createElement("div")
-    author.textContent = `by ${value}`
-    author.classList.add("author")
-    container.appendChild(author)
-    event.preventDefault();
-})
-
-function book(name) {
-    this.name = name
+function book(name, author, leftPage, pageNumber) {
+  this.name = name;
+  this.author = author;
+  this.readPage = leftPage;
+  this.page = pageNumber;
 }
 
-const value = inputAuthorName.value;
-const books = new book(value)
-
-console.log(books)
-
-
-function addBookToLibrary(object) {
-    return myLibrary.push(object)
+function addBookToMyLibrary() {
+  const book = document.createElement("div");
+  books.appendChild(book);
 }
 
-addBookToLibrary(books)
+create.addEventListener("click", () => {
+  const newBook = new book(
+    bookName.value,
+    authorName.value,
+    readPage.value,
+    page.value
+  );
+  mylibrary.push(newBook);
 
-console.log(myLibrary)
+  bookName.value = "";
+  authorName.value = "";
+  readPage.value = "";
+  page.value = "";
 
-function display(thing){
-    console.log(thing)
-}
-
-display(myLibrary[0])
+  console.log(mylibrary);
+  addBookToMyLibrary();
+  const popup = cancelBtn.closest(".popup");
+  closePopup(popup);
+  event.preventDefault();
+});
