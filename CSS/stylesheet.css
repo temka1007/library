@@ -78,6 +78,9 @@ form > div {
 button {
   font-family: "Lato", sans-serif;
 }
+.remove {
+  margin-left: 5px;
+}
 
 /* pop up */
 
