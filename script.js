@@ -34,8 +34,8 @@ const myLibrary = [
   {
     name: "Reconstruction in Philosophy",
     author: "John Dewey",
-    readPage: 5,
-    page: 20,
+    readPage: 50,
+    page: 238,
     created: false,
   },
 ];
@@ -98,6 +98,7 @@ function arrayLoop(array) {
       const form = document.createElement("form");
       const progress = document.createElement("progress");
       const progressIndicator = document.createElement("div");
+      progressIndicator.classList.add("progressIndicator")
 
       progress.setAttribute("value", Math.floor(array[i].readPage));
       progress.setAttribute("max", Math.floor(array[i].page));
@@ -106,7 +107,7 @@ function arrayLoop(array) {
       } else {
         progressIndicator.textContent = `${Math.floor(
           array[i].readPage
-        )}/${Math.floor(array[i].page)}`;
+        )} / ${Math.floor(array[i].page)}`;
       }
 
       // button
