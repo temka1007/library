@@ -64,12 +64,22 @@ cancelBtn.addEventListener("click", () => {
   event.preventDefault();
 });
 
-function BookInformation(name, author, leftPage, pageNumber) {
-  this.name = name;
-  this.author = author;
-  this.readPage = Math.floor(leftPage);
-  this.page = Math.floor(pageNumber);
-  this.created = false;
+// function BookInformation(name, author, leftPage, pageNumber) {
+//   this.name = name;
+//   this.author = author;
+//   this.readPage = Math.floor(leftPage);
+//   this.page = Math.floor(pageNumber);
+//   this.created = false;
+// }
+
+class BookInformation {
+  constructor(name, author, leftPage, pageNumber) {
+    this.name = name;
+    this.author = author;
+    this.readPage = Math.floor(leftPage);
+    this.page = Math.floor(pageNumber);
+    this.created = false;
+  }
 }
 
 function arrayLoop(array) {
@@ -98,7 +108,7 @@ function arrayLoop(array) {
       const form = document.createElement("form");
       const progress = document.createElement("progress");
       const progressIndicator = document.createElement("div");
-      progressIndicator.classList.add("progressIndicator")
+      progressIndicator.classList.add("progressIndicator");
 
       progress.setAttribute("value", Math.floor(array[i].readPage));
       progress.setAttribute("max", Math.floor(array[i].page));
@@ -159,6 +169,6 @@ create.addEventListener("click", () => {
   );
   myLibrary.push(newBook);
   arrayLoop(myLibrary);
-  cleaner()
+  cleaner();
   event.preventDefault();
 });
